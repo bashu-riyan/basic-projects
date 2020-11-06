@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #container {
+        padding: 20px;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        margin-top: 40px;
+        background-color: rgb(179, 191, 196);
+        font-size: 40px;
+    }
+    
+    #time {
+        /* background-color: rgb(252, 249, 249);
+        border: 2px solid grey;
+        padding: 10px 3px;
+        border-radius: 21px; */
+        font-size: 40px;
+        font-weight: 2px;
+    }
+</style>
+
+<body>
+
+    <div id="container">
+        THE TIME IS :
+        <hr><span id="time"></span>
+
+
+
+    </div>
+
+    <script>
+        // let time = document.getElementsByTagName('span');
+        let date = new Date();
+        console.log(date)
+
+        date = () => {
+
+
+
+            let date = new Date();
+            let a = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+            let b = date.toLocaleDateString();
+
+
+            time.innerText = a + ' ON ' + b
+
+
+
+
+
+        }
+
+        setInterval(date, 1000);
+    </script>
+
+</body>
+
+</html>

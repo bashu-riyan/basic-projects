@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: rgb(210, 223, 223);
+    }
+    
+    #container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        background-color: rgba(235, 235, 235, 0.698);
+        border-bottom: 2px solid rgb(248, 245, 245);
+    }
+    
+    .h1 {
+        display: flex;
+        justify-content: center;
+        padding: 0px;
+        color: rgb(8, 8, 8);
+        background-color: rgb(197, 197, 197);
+        border-bottom: 2px solid rgb(240, 238, 238);
+    }
+    
+    #btn {
+        background-color: rgb(35, 73, 107);
+        color: white;
+        border-radius: 7px;
+    }
+    
+    .add {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        background-color: antiquewhite;
+    }
+    
+    .para {
+        display: flex;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+    
+    label {
+        font-size: 20px;
+        color: rgb(17, 27, 27);
+    }
+    
+    .para {
+        background-color: rgb(70, 70, 233);
+        color: rgb(255, 255, 255);
+        border-radius: 10px;
+        border-bottom: 2px solid white;
+    }
+    
+    #screen {
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+
+
+    <div class="h1">
+        <h1>ADD List Items</h1>
+    </div>
+    <div id="container">
+
+        <label for="text">Items:</label>
+        <input type="text" id="screen">
+        <button id="btn">Add Item</button>
+    </div>
+    <div id="para"></div>
+
+
+
+
+
+    </div>
+
+    <script>
+        let con = document.getElementsByClassName('container')
+        let button = document.getElementById('btn');
+
+        button.addEventListener('click', function() {
+            let screen = document.getElementById('screen');
+            let sp = document.createElement('p')
+            sp.classList.add('para');
+            sp.innerText = screen.value
+            para.appendChild(sp);
+
+
+            screen.value = ""
+        })
+    </script>
+</body>
+
+</html>

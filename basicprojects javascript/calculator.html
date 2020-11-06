@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple calculator</title>
+
+</head>
+<style>
+    h1 {
+        background-color: rgb(17, 8, 8);
+        color: rgb(255, 255, 255);
+        border: 2px solid rgb(253, 251, 251);
+        display: inline-block;
+        border-radius: 10px;
+    }
+    
+    .container {
+        border: 2px solid black;
+        background: url("https://miro.medium.com/max/700/1*xqT6IyBaLLqfEyELtAGf9g.png")no-repeat center;
+    }
+    
+    #cal {
+        text-align: center;
+    }
+    
+    #screen {
+        width: 100%;
+        height: 30px;
+        font-size: 25px;
+        border-radius: 14px;
+        border: 2px solid rgb(84, 84, 243);
+    }
+    
+    table {
+        margin: auto;
+    }
+    
+    .btndef {
+        background: url("");
+        width: 45px;
+        height: 45px;
+        font-size: 25px;
+        border-radius: 22px;
+        border: 2px solid rgb(84, 84, 243);
+        color: aliceblue;
+    }
+    
+    .btn {
+        background-color: aqua;
+        width: 45px;
+        height: 45px;
+        font-size: 25px;
+        border-radius: 22px;
+        border: 2px solid rgb(84, 84, 243);
+        color: aliceblue;
+    }
+    
+    .btndef {
+        background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRE9tjumdyBulw2gQVCc-WFS3VA985iksbfrw&usqp=CAU");
+        width: 45px;
+        height: 45px;
+        font-size: 25px;
+        border-radius: 22px;
+        border: 2px solid rgb(84, 84, 243);
+        color: aliceblue;
+    }
+    
+    button {
+        background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQTCaoP7N4alShuyUHDpj9SnD-ZH_JqL0QAXw&usqp=CAU");
+        width: 45px;
+        height: 45px;
+        font-size: 25px;
+        border-radius: 22px;
+        border: 2px solid rgb(84, 84, 243);
+        color: aliceblue;
+    }
+    
+    button:hover {
+        background-color: rgb(86, 86, 131);
+        width: 49px;
+        height: 49px;
+        font-size: 29px;
+        border-radius: 22px;
+        border: 2px solid rgb(84, 84, 243);
+        color: whitesmoke;
+    }
+</style>
+
+
+<body>
+    <div id="cal">
+        <div class="container">
+            <h1>CALCULATOR</h1>
+            <input type="text" name="screen" id="screen">
+            <table>
+                <tr>
+                    <td><button>7</button></td>
+                    <td><button>8</button></td>
+                    <td><button>9</button></td>
+                    <td><button class="btndef">%</button></td>
+                </tr>
+                <tr>
+                    <td><button>4</button></td>
+                    <td><button>5</button></td>
+                    <td><button>6</button></td>
+                    <td><button class="btndef">X</button></td>
+                </tr>
+                <tr>
+                    <td><button>1</button></td>
+                    <td><button>2</button></td>
+                    <td><button>3</button></td>
+                    <td><button class="btndef">+</button></td>
+                </tr>
+                <tr>
+                    <td> <button class="btndef">=</button></td>
+                    <td><button>0</button></td>
+                    <td><button id="clear">C</button> </td>
+                    <td><button class="btndef">-</button></td>
+                </tr>
+
+            </table>
+        </div>
+
+    </div>
+
+</body>
+<script>
+    let screen = document.getElementById('screen');
+    button = document.querySelectorAll('button');
+    let screennum = '';
+    for (item of button) {
+        item.addEventListener('click', (n) => {
+            buttonN = n.target.innerText;
+            console.log("button is", buttonN)
+            if (buttonN == 'X') {
+                buttonN = '*';
+                screennum += buttonN;
+                screen.value = screennum;
+            } else if (buttonN == '=') {
+                screen.value = eval(screennum);
+
+            } else if (buttonN == 'C') {
+                buttonN = ""
+                screennum = buttonN;
+                screen.value = screennum;
+            } else {
+                screennum += buttonN;
+                screen.value = screennum;
+
+            }
+        })
+    }
+</script>
+
+</html>
